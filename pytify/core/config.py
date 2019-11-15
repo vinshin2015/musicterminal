@@ -26,9 +26,7 @@ def read_config():
             config['base_url'] = f'{config["api_url"]}/{config["api_version"]}'
             auth_method = config['auth_method']
             config['auth_method'] = AuthMethod.__members__.get(auth_method)
-
             return Config(**config)
-
     except IOError as e:
         print("""Error: couldn''t file the configuration file 
         `config.yaml`
